@@ -3,171 +3,622 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+    <title>Venugopal K | Java Full Stack Developer</title>
+    <meta name="description" content="Venugopal K — Software Developer specializing in Java, Spring Boot, Microservices, AI/ML, and Computer Vision.">
+    <meta name="keywords" content="Venugopal K, Java Developer, Spring Boot, Full Stack Developer, AI/ML, Computer Vision, Software Engineer">
+    <meta name="author" content="Venugopal K">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Venugopal K | Java Full Stack Developer">
+    <meta property="og:description" content="Software Developer specializing in Java, Spring Boot, Microservices, AI/ML, and Computer Vision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://my-portfolio-v1-topaz.vercel.app/">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./mediaqueries.css">
 </head>
 <body>
-    <!-- Desktop Navbar -->
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress"></div>
+    </div>
+
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
-        <div class="logo">Venugopal K</div>
-        <div>
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Home">
+                <span class="logo-mark">VK</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul> 
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact" class="nav-cta">Let's Connect</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Mobile Navbar -->
+    <!-- Mobile Navigation -->
     <nav id="hamburger-nav">
-        <div class="logo">Venugopal K</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Home">
+                <span class="logo-mark">VK</span>
+            </a>
+            <div class="hamburger-menu">
+                <button class="hamburger-icon" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
+        </div>
+        <div class="menu-links">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Profile Section -->
-    <section id="profile">
-        <div class="section_pic-container">
-            <img src="images/profile.png.jpg" alt="Venugopal K profile-pic">
-        </div>
-        <div class="section_text">
-            <p class="section__text__p1">Hello, I am</p>
-            <h1 class="title">Venugopal K</h1>
-            <p class="section__text__p2">Frontend Developer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('RESUME.pdf?v=' + new Date().getTime(), '_blank')">
-                    Download Resume / CV
-                </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">
-                    Contact
-                </button>
-            </div>
-            <div id="social-container">
-                <img src="images/linkedin_profile.png" alt="My Linkedin profile" class="icon"
-                     onclick="location.href='https://www.linkedin.com/in/venugopal-k-0bba49287/'" />
-                <img src="images/github_profile.png" alt="My Github profile" class="icon"
-                     onclick="location.href='https://github.com/Venugopal-2005'" />
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <p class="section__text__p1">Get to Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img src="./images/profile-pic.png.jpg" alt="About me picture" class="about-pic" />
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="images/exp.png" alt="experience_icon" class="icon" />
-                        <h3>Experience</h3>
-                        <p>1+ years <br>Frontend Developer</p>
-                        <p>Intern at Agratus Academy</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="images/education.png" alt="education_icon" class="icon" />
-                        <h3>Education</h3>
-                        <p>B.Tech in Computer Science<br>SRM Institute of Science and Technology</p>
-                        <p>Pre-final year</p>
-                        <p>Reg.No : RA2311003011949</p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>
-                        I am a passionate frontend developer with a keen interest in building responsive and user-friendly web applications.
-                        My journey in web development began with a fascination for creating interactive user interfaces, and I have since honed my skills in various frontend technologies.
-                        I am always eager to learn and adapt to new challenges in the ever-evolving field of web development.
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section-container reveal">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting">Hello, I am</p>
+                    <h1 class="name">Venugopal K</h1>
+                    <h2 class="title">Java Full Stack Developer</h2>
+                    <p class="subtitle">Spring Boot &bull; Microservices &bull; AI/ML &bull; Computer Vision</p>
+                    <p class="summary">
+                        Final-year Computer Science engineering student dedicated to building robust backend systems, scalable microservices, and intelligent AI-driven applications. I transform complex problems into efficient, real-world software solutions.
                     </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                            View My Projects
+                        </button>
+                        <a href="./RESUME.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            Download Resume
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Venugopal-2005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/venugopal-k-0bba49287/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="mailto:venu170305@gmail.com" aria-label="Email">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <div class="profile-ring"></div>
+                        <div class="profile-orb"></div>
+                        <img src="./images/profile-pic.jpg" alt="Venugopal K" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-container reveal">
+            <div class="section-header">
+                <span class="section-tag">INTRODUCTION</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-cards">
+                    <div class="about-card">
+                        <div class="card-icon" style="color: var(--primary);">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        </div>
+                        <h3>Education</h3>
+                        <p>B.Tech Computer Science</p>
+                        <span class="card-detail" style="display: block; margin-bottom: 0.5rem;">SRM Institute of Science and Technology (8.45 CGPA)</span>
+                        <p>12th Grade (PCMB)</p>
+                        <span class="card-detail" style="display: block; margin-bottom: 0.5rem;">Sri Guru PU College (82.6%)</span>
+                        <p>10th Grade</p>
+                        <span class="card-detail">Adarsha Vidyalaya (87.84%)</span>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon" style="color: var(--primary);">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>Development Focus</h3>
+                        <p>Java Full Stack</p>
+                        <span class="card-detail">Backend architecture, Microservices, and REST APIs.</span>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon" style="color: var(--primary);">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3>AI & ML</h3>
+                        <p>Intelligent Systems</p>
+                        <span class="card-detail">Computer Vision, Object Detection, and Model Prediction.</span>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon" style="color: var(--primary);">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        </div>
+                        <h3>Problem Solving</h3>
+                        <p>Real-world Impact</p>
+                        <span class="card-detail">Applying engineering principles to create practical solutions.</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>I am a B.Tech Computer Science student at SRM Kattankulathur, driven by a passion for backend architecture and intelligent systems. My technical foundation is rooted in <strong>Java and Spring Boot</strong>, where I focus on designing scalable microservices and robust REST APIs.</p>
+                    <p>Beyond traditional backend engineering, I have substantial experience in <strong>Artificial Intelligence and Computer Vision</strong>. I have successfully integrated machine learning models and OpenCV/YOLO pipelines into real-world applications, bridging the gap between predictive algorithms and functional software products.</p>
+                    <p>My development philosophy centers on writing clean, maintainable code, adopting modern architectural patterns, and continuously exploring emerging technologies to build efficient, high-performance systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-container reveal">
+            <div class="section-header">
+                <span class="section-tag">EXPERTISE</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <h3>Primary Technologies</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag primary">Java</span>
+                        <span class="skill-tag primary">Spring Boot</span>
+                        <span class="skill-tag primary">REST APIs</span>
+                        <span class="skill-tag primary">Microservices</span>
+                        <span class="skill-tag primary">OOP</span>
+                        <span class="skill-tag primary">DSA</span>
+                        <span class="skill-tag primary">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                        <h3>AI & Computer Vision</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag ai">Machine Learning</span>
+                        <span class="skill-tag ai">Computer Vision</span>
+                        <span class="skill-tag ai">OpenCV</span>
+                        <span class="skill-tag ai">YOLO</span>
+                        <span class="skill-tag ai">OCR</span>
+                        <span class="skill-tag ai">Face Recognition</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                        <h3>Secondary Stack</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag secondary">Python</span>
+                        <span class="skill-tag secondary">C++</span>
+                        <span class="skill-tag secondary">PostgreSQL</span>
+                        <span class="skill-tag secondary">MySQL</span>
+                        <span class="skill-tag secondary">React</span>
+                        <span class="skill-tag secondary">HTML / CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        <h3>Tools & Ecosystem</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag tool">Git & GitHub</span>
+                        <span class="skill-tag tool">Docker</span>
+                        <span class="skill-tag tool">Postman</span>
+                        <span class="skill-tag tool">Swagger/OpenAPI</span>
+                        <span class="skill-tag tool">IntelliJ IDEA</span>
+                        <span class="skill-tag tool">Maven / Gradle</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section-container reveal">
+            <div class="section-header">
+                <span class="section-tag">CAREER</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title">
+                                <h3>Computer Vision Intern</h3>
+                                <h4>MSPL Limited – Baldota Organization</h4>
+                            </div>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Implemented practical AI solutions focused on image processing and object detection.</li>
+                            <li>Worked with YOLO and OpenCV to develop workflows for automated visual identification.</li>
+                            <li>Applied Optical Character Recognition (OCR) concepts to extract critical information from visual data.</li>
+                            <li>Contributed to real-world software development initiatives bridging computer vision and operational automation.</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Computer Vision</span>
+                            <span>OpenCV</span>
+                            <span>YOLO</span>
+                            <span>OCR</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-container reveal">
+            <div class="section-header">
+                <span class="section-tag">PORTFOLIO</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1 (Moved up) -->
+                <div class="project-card" onclick="openProjectModal('digital-banking')">
+                    <div class="project-category">Java Full Stack</div>
+                    <h3 class="project-title">Global Digital Banking System</h3>
+                    <p class="project-desc">Enterprise-oriented application featuring an API Gateway, JWT security, and fund transfer simulations via React and Spring Boot.</p>
+                    <div class="project-tech-mini">
+                        <span>Spring Boot</span><span>React</span><span>PostgreSQL</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" onclick="openProjectModal('vehicle-safety')">
+                    <div class="project-category">AI / Computer Vision</div>
+                    <h3 class="project-title">Smart Employee Vehicle Safety & Access Control</h3>
+                    <p class="project-desc">An AI-powered computer vision system for automated vehicle/person identification, OCR processing, and access verification.</p>
+                    <div class="project-tech-mini">
+                        <span>YOLO</span><span>OpenCV</span><span>OCR</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" onclick="openProjectModal('job-scheduler')">
+                    <div class="project-category">Backend / Microservices</div>
+                    <h3 class="project-title">Distributed Job Scheduler</h3>
+                    <p class="project-desc">A distributed backend service built with Spring Boot to schedule, manage, and execute jobs with persistent PostgreSQL storage and Redis.</p>
+                    <div class="project-tech-mini">
+                        <span>Spring Boot</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" onclick="openProjectModal('attendance')">
+                    <div class="project-category">Full Stack / AI</div>
+                    <h3 class="project-title">Smart Attendance Management</h3>
+                    <p class="project-desc">Intelligent attendance platform combining React, FastAPI, and facial recognition workflows for automated real-time tracking.</p>
+                    <div class="project-tech-mini">
+                        <span>React</span><span>FastAPI</span><span>Face Recognition</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" onclick="openProjectModal('raga-roads')">
+                    <div class="project-category">Backend / Java</div>
+                    <h3 class="project-title">Raga Roads Microservices</h3>
+                    <p class="project-desc">A Spring Boot microservices ecosystem handling domains like Artist, Concert, Booking, and Auth via integrated REST APIs.</p>
+                    <div class="project-tech-mini">
+                        <span>Java</span><span>Spring Boot</span><span>REST APIs</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" onclick="openProjectModal('agrixai')">
+                    <div class="project-category">Machine Learning</div>
+                    <h3 class="project-title">AgrixAI Yield Prediction</h3>
+                    <p class="project-desc">An explainable AI agricultural platform using model ensembles and SHAP to interpret crop-yield predictions, integrated with Supabase.</p>
+                    <div class="project-tech-mini">
+                        <span>Python</span><span>XGBoost</span><span>Flask</span><span>SHAP</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="project-card" onclick="openProjectModal('kidney-stone')">
+                    <div class="project-category">Machine Learning</div>
+                    <h3 class="project-title">Kidney Stone Prediction</h3>
+                    <p class="project-desc">A predictive healthcare model utilizing the Extra Trees Classifier to analyze patient data, achieving a 94.46% prediction accuracy.</p>
+                    <div class="project-tech-mini">
+                        <span>Python</span><span>Scikit-learn</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" onclick="openProjectModal('hater-speech')">
+                    <div class="project-category">Machine Learning / NLP</div>
+                    <h3 class="project-title">Hate Speech Detection</h3>
+                    <p class="project-desc">A machine learning model for analyzing text data and detecting hate speech using Natural Language Processing (NLP).</p>
+                    <div class="project-tech-mini">
+                        <span>Python</span><span>Machine Learning</span><span>NLP</span>
+                    </div>
+                    <div class="project-action">View Details &rarr;</div>
+                </div>
+
+            </div>
+            
+            <div class="github-cta-container">
+                <a href="https://github.com/Venugopal-2005" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    Explore More on GitHub
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications -->
+        <section id="achievements" class="section-container reveal">
+            <div class="section-header">
+                <span class="section-tag">RECOGNITION & LEARNING</span>
+                <h2 class="section-title">Certifications & Achievements</h2>
+            </div>
+            
+            <div class="split-layout">
+                <!-- Certifications -->
+                <div class="split-col">
+                    <h3 class="split-title">Certifications & Courses</h3>
+                    <ul class="list-timeline">
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Introduction to Machine Learning (Elite)</h4>
+                                <p>NPTEL Online Certification (Jul-Sep 2025)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Learning Java 17</h4>
+                                <p>LinkedIn Learning</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>IoT Foundations & Networking</h4>
+                                <p>LinkedIn Learning: Operating System Applications & Low-Power Wireless Networking (Aug 2026). Cisco: Intro to IoT & Networking Basics (Sep-Oct 2025).</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>SAP Analytics Cloud – Data Analyst</h4>
+                                <p>SAP (Apr 2026)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Agile Project Management</h4>
+                                <p>HP LIFE (May 2026)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>FortiGate 7.6 Operator Self-Paced</h4>
+                                <p>Fortinet Training Institute (Jan 2026)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Python Full Stack</h4>
+                                <p>EduSkills Academy (Oct 2025).</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>DBMS & Programming Foundations</h4>
+                                <p>Scaler Topics: DBMS Course (Jul 2025). Udemy: C Programming For Beginners & Beginning C++ (2023-2024).</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Achievements -->
+                <div class="split-col">
+                    <h3 class="split-title">Technical Events & Hackathons</h3>
+                    <ul class="list-timeline">
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Adobe India Hackathon</h4>
+                                <p>Adobe / Online on Unstop (Oct 2024)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Hacktrax Hackathon</h4>
+                                <p>Alexa Developers SRM, SRMIST KTR (Mar 2025)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Hackathon Pair Programming</h4>
+                                <p>Dept. of Computing Technologies & SRM (Aug 2024)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>SEMICOLON 9.0</h4>
+                                <p>Team SRM Hackathon & NWC Dept (Feb 2024)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>CreaTech 2024</h4>
+                                <p>Larsen & Toubro / Online on Unstop (2024)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-marker"></div>
+                            <div class="list-content">
+                                <h4>Technical Workshops</h4>
+                                <p>Git101 (Nov 2023), Web Development (Feb 2025), Business Apps with Low Code (Sep 2024), Next-Gen Energy Management (Jul 2025).</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Extracurricular -->
+            <div class="extracurricular-section" style="margin-top: 4rem;">
+                <h3 class="text-center" style="margin-bottom: 2rem; color: var(--secondary); font-family: var(--font-heading);">Extra-Curricular & Community</h3>
+                <div class="pill-grid">
+                    <span class="pill">🚴 Swachhata Hi Seva Cyclothon</span>
+                    <span class="pill">🚴 Awareness Cycle Rally</span>
+                    <span class="pill">🌱 Plantation Activities</span>
+                    <span class="pill">🩸 Blood Donation Camp</span>
+                    <span class="pill">🇮🇳 Vande Mataram World Record</span>
+                    <span class="pill">🗣️ Desam Kaappom, Tamizhai Valarppom</span>
+                    <span class="pill">🎭 2nd Prize in Dance Competition</span>
+                    <span class="pill">👑 Class Representative (CR)</span>
+                    <span class="pill">🤝 Community Connect Program</span>
+                    <span class="pill">🎤 Singing & Drama</span>
+                    <span class="pill">🥋 Karate</span>
+                    <span class="pill">🏸 Badminton</span>
+                    <span class="pill">📚 DSA Discipline Club</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container reveal">
+            <div class="contact-wrapper">
+                <div class="contact-text">
+                    <span class="section-tag">WHAT'S NEXT</span>
+                    <h2 class="section-title">Let's Build Something Meaningful.</h2>
+                    <p>I am actively seeking software engineering roles, internships, and collaborative opportunities where I can apply my skills in Java, backend architecture, and intelligent systems to solve complex problems.</p>
+                </div>
+                
+                <div class="contact-cards">
+                    <a href="mailto:venu170305@gmail.com" class="contact-card-link">
+                        <div class="contact-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <p>venu170305@gmail.com</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/venugopal-k-0bba49287/" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+                        <div class="contact-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </div>
+                        <div class="contact-info">
+                            <h4>LinkedIn</h4>
+                            <p>Connect professionally</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Venugopal-2005" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+                        <div class="contact-icon-wrapper">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </div>
+                        <div class="contact-info">
+                            <h4>GitHub</h4>
+                            <p>View my code</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-mark">VK</span>
+                <div>
+                    <h3>Venugopal K</h3>
+                    <p>Java Full Stack Developer | AI/ML</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="./RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Venugopal K. All rights reserved.</p>
+            <p class="deployment-text">Deployed via Vercel</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <span id="modal-category" class="section-tag"></span>
+                <h2 id="modal-title"></h2>
+                <div id="modal-tech" class="project-tech-mini"></div>
+                <div class="modal-divider"></div>
+                <div id="modal-desc" class="modal-text"></div>
+                <div id="modal-details" class="modal-text strong-details"></div>
+                <div id="modal-metric" class="modal-metric"></div>
+                <div class="modal-actions">
+                    <a href="#" id="modal-github" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        View Repository
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
                 </div>
             </div>
         </div>
-        <img src="images/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-    </section>
+    </div>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="article-container">
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>HTML</h3><p>Experienced</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>CSS</h3><p>Experienced</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>JavaScript</h3><p>Ongoing</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>C</h3><p>Experienced</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>C++</h3><p>Experienced</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>Python</h3><p>Experienced</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>Java</h3><p>Basic</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>SQL</h3><p>Intermediate</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>Node JS</h3><p>Basic</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>Git</h3><p>Basic</p></div></article>
-                <article><img src="./images/checkmark.png" class="icon"><div><h3>AIML</h3><p>Ongoing</p></div></article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <p class="section__text__p1">Browse My</p>
-        <h1 class="title">Projects</h1>
-        <div class="projects-container">
-            <div class="project-card">
-                <h3>Travel Booking System</h3>
-                <p>
-                    A user-friendly travel booking system to book flights, hotels, and tour packages seamlessly through an integrated online platform.
-                </p>
-                <p class="project-duration">March 2025 – April 2025</p>
-            </div>
-            <div class="project-card">
-                <h3>Cannibal River-Crossing Puzzle Game</h3>
-                <p>
-                    A web-based interactive game based on the classic "Cannibals and Missionaries" logic puzzle.
-                </p>
-                <p class="project-duration">April 2025 – May 2025</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-container">
-            <div class="contact-card">
-                <h3>Email</h3>
-                <p><a href="mailto:venu170305@gmail.com">venu170305@gmail.com</a></p>
-            </div>
-            <div class="contact-card">
-                <h3>Phone</h3>
-                <p><a href="tel:+919480249096">+91 9480249096</a></p>
-            </div>
-            <div class="contact-card">
-                <h3>LinkedIn</h3>
-                <p><a href="https://www.linkedin.com/in/venugopal-k-0bba49287/" target="_blank">linkedin.com/in/venugopal-k-0bba49287</a></p>
-            </div>
-            <div class="contact-card">
-                <h3>GitHub</h3>
-                <p><a href="https://github.com/Venugopal-2005" target="_blank">github.com/Venugopal-2005</a></p>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
