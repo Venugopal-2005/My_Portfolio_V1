@@ -1,10 +1,8 @@
-```jsx
 import React, { useState } from 'react';
 import {
   Award,
   Download,
   Eye,
-  FileText,
   Image as ImageIcon,
   X
 } from 'lucide-react';
@@ -275,4 +273,3 @@ export default function Certifications({ certifications }) {
     </section>
   );
 }
-```
