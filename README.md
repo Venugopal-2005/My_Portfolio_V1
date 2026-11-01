@@ -7,7 +7,7 @@
 [![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)](https://my-portfolio-v1-topaz.vercel.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Live Portfolio:** [my-portfolio-v1-topaz.vercel.app](https://my-portfolio-v1-topaz.vercel.app)  
+> **Live Portfolio:** [my-portfolio-v1-topaz.vercel.app](https://my-portfolio-v1-ruddy.vercel.app)  
 > **GitHub:** [github.com/Venugopal-2005/My_Portfolio_V1](https://github.com/Venugopal-2005/My_Portfolio_V1)
 
 ---
