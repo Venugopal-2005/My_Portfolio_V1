@@ -1,5 +1,13 @@
+```jsx
 import React, { useState } from 'react';
-import { Award, Download, Eye, ExternalLink, FileText, Image as ImageIcon, X } from 'lucide-react';
+import {
+  Award,
+  Download,
+  Eye,
+  FileText,
+  Image as ImageIcon,
+  X
+} from 'lucide-react';
 
 export default function Certifications({ certifications }) {
   const [previewItem, setPreviewItem] = useState(null);
@@ -17,23 +25,34 @@ export default function Certifications({ certifications }) {
     'Methodologies': { bg: '#fefce8', text: '#a16207', border: '#fef08a' },
   };
 
-  const isImage = (filename) => filename && /\.(jpg|jpeg|png)$/i.test(filename);
+  const isImage = (filename) =>
+    filename && /\.(jpg|jpeg|png)$/i.test(filename);
 
+  // Download certificate using the backend endpoint.
   const handleDownload = (cert) => {
-    if (cert.id) {
-      window.open(`/api/certifications/${cert.id}/download`, '_blank');
-    }
+    if (!cert.id) return;
+
+    window.open(
+      `/api/certifications/${cert.id}/download`,
+      '_blank'
+    );
   };
 
+  // Preview images in the existing modal and open PDFs inline.
   const handlePreview = (cert) => {
+    if (!cert.id) return;
+
+    const certificateUrl =
+      `/api/certifications/${cert.id}/download?inline=true`;
+
     if (isImage(cert.filename)) {
       setPreviewItem({
         type: 'image',
-        url: `/static/certificates/${encodeURIComponent(cert.filename)}`,
+        url: certificateUrl,
         title: cert.title,
       });
     } else {
-      window.open(`/api/certifications/${cert.id}/download`, '_blank');
+      window.open(certificateUrl, '_blank');
     }
   };
 
@@ -43,21 +62,50 @@ export default function Certifications({ certifications }) {
         <div className="section-header">
           <span className="section-tag">CREDENTIALS</span>
           <h2 className="section-title">Certifications &amp; Courses</h2>
-          <p className="section-subtitle">Professional certifications, academic achievements, and continuous learning milestones</p>
+          <p className="section-subtitle">
+            Professional certifications, academic achievements, and continuous learning milestones
+          </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.25rem' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gap: '1.25rem'
+          }}
+        >
           {certifications.map(cert => {
-            const colors = categoryColors[cert.category] || categoryColors['Industry Experience'];
+            const colors =
+              categoryColors[cert.category] ||
+              categoryColors['Industry Experience'];
+
             return (
               <div
                 key={cert.id}
                 className="card"
-                style={{ cursor: 'default', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}
+                style={{
+                  cursor: 'default',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem'
+                }}
               >
                 {/* Icon and category */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-between',
+                    gap: '0.5rem'
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.65rem'
+                    }}
+                  >
                     <div
                       style={{
                         width: '40px',
@@ -74,6 +122,7 @@ export default function Certifications({ certifications }) {
                     >
                       <Award size={18} />
                     </div>
+
                     <span
                       style={{
                         fontSize: '0.75rem',
@@ -92,30 +141,66 @@ export default function Certifications({ certifications }) {
 
                 {/* Title and Issuer */}
                 <div>
-                  <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--secondary)', lineHeight: 1.4, marginBottom: '0.25rem' }}>
+                  <h3
+                    style={{
+                      fontSize: '0.95rem',
+                      fontWeight: 700,
+                      color: 'var(--secondary)',
+                      lineHeight: 1.4,
+                      marginBottom: '0.25rem'
+                    }}
+                  >
                     {cert.title}
                   </h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+
+                  <p
+                    style={{
+                      fontSize: '0.85rem',
+                      color: 'var(--text-muted)'
+                    }}
+                  >
                     {cert.issuer}
-                    {cert.issue_date && <span style={{ marginLeft: '0.5rem', color: 'var(--text-light)' }}>• {cert.issue_date}</span>}
+                    {cert.issue_date && (
+                      <span
+                        style={{
+                          marginLeft: '0.5rem',
+                          color: 'var(--text-light)'
+                        }}
+                      >
+                        • {cert.issue_date}
+                      </span>
+                    )}
                   </p>
                 </div>
 
                 {/* Actions */}
                 {cert.filename && (
-                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      gap: '0.5rem',
+                      marginTop: 'auto'
+                    }}
+                  >
                     <button
                       onClick={() => handlePreview(cert)}
                       className="btn btn-secondary btn-sm"
                       style={{ flex: 1 }}
+                      disabled={!cert.id}
                     >
-                      {isImage(cert.filename) ? <ImageIcon size={14} /> : <Eye size={14} />}
+                      {isImage(cert.filename) ? (
+                        <ImageIcon size={14} />
+                      ) : (
+                        <Eye size={14} />
+                      )}
                       {isImage(cert.filename) ? 'View' : 'Open'}
                     </button>
+
                     <button
                       onClick={() => handleDownload(cert)}
                       className="btn btn-primary btn-sm"
                       style={{ flex: 1 }}
+                      disabled={!cert.id}
                     >
                       <Download size={14} />
                       Download
@@ -130,31 +215,59 @@ export default function Certifications({ certifications }) {
 
       {/* Image Preview Modal */}
       {previewItem && (
-        <div className="modal-overlay" onClick={() => setPreviewItem(null)}>
-          <div style={{
-            backgroundColor: '#fff',
-            borderRadius: 'var(--radius-lg)',
-            boxShadow: 'var(--shadow-xl)',
-            maxWidth: '90vw',
-            maxHeight: '90vh',
-            overflow: 'hidden',
-            position: 'relative',
-          }} onClick={e => e.stopPropagation()}>
+        <div
+          className="modal-overlay"
+          onClick={() => setPreviewItem(null)}
+        >
+          <div
+            style={{
+              backgroundColor: '#fff',
+              borderRadius: 'var(--radius-lg)',
+              boxShadow: 'var(--shadow-xl)',
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              overflow: 'hidden',
+              position: 'relative',
+            }}
+            onClick={e => e.stopPropagation()}
+          >
             <button
               className="modal-close"
               onClick={() => setPreviewItem(null)}
-              style={{ position: 'absolute', top: '0.75rem', right: '0.75rem', zIndex: 10 }}
+              style={{
+                position: 'absolute',
+                top: '0.75rem',
+                right: '0.75rem',
+                zIndex: 10
+              }}
             >
               <X size={18} />
             </button>
-            <p style={{ padding: '1rem 3rem 0.5rem 1.25rem', fontWeight: 600, fontSize: '0.9rem', color: 'var(--secondary)' }}>
+
+            <p
+              style={{
+                padding: '1rem 3rem 0.5rem 1.25rem',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                color: 'var(--secondary)'
+              }}
+            >
               {previewItem.title}
             </p>
+
             <img
               src={previewItem.url}
               alt={previewItem.title}
-              style={{ maxWidth: '85vw', maxHeight: '80vh', objectFit: 'contain', display: 'block' }}
-              onError={(e) => { e.target.src = ''; e.target.alt = 'Image not available'; }}
+              style={{
+                maxWidth: '85vw',
+                maxHeight: '80vh',
+                objectFit: 'contain',
+                display: 'block'
+              }}
+              onError={(e) => {
+                e.target.src = '';
+                e.target.alt = 'Image not available';
+              }}
             />
           </div>
         </div>
@@ -162,3 +275,4 @@ export default function Certifications({ certifications }) {
     </section>
   );
 }
+```
