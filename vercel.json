@@ -8,8 +8,8 @@
     },
     "backend": {
       "root": "backend/",
-      "entrypoint": "app.main:app",
-      "framework": "fastapi"
+      "runtime": "container",
+      "entrypoint": "Dockerfile"
     }
   },
   "rewrites": [
